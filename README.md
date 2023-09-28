@@ -2,11 +2,6 @@
 
 Coingecko API client for golang.
 
-<p align="center">
-    <img src="images/goin.png" alt="goingecko" height="200" />
-</p> 
-
-
 
 ## Endpoints
 |  Endpoint |  Status | Function  |
@@ -46,11 +41,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/JulianToledano/goingecko"
+	"github.com/verzth/go-coingecko"
 )
 
 func main() {
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 	defer cgClient.Close()
 
 	data, err := cgClient.CoinsId("bitcoin", true, true, true, false, false, false)
@@ -65,6 +60,6 @@ func main() {
 Check dir [examples](examples) for more.
 
 ## Thanks
-This repo is based some how in [superoo7/go-gecko](https://github.com/superoo7/go-gecko) work.
+This repo is based some how in [superoo7/go-gecko](https://github.com/superoo7/go-gecko) & [JulianToledano/goingecko](https://github.com/JulianToledano/goingecko) work.
 
 Image was created with [Gophers](https://github.com/egonelbre/gophers)

@@ -1,4 +1,4 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/JulianToledano/goingecko/coins"
-	"github.com/JulianToledano/goingecko/types"
+	"github.com/verzth/go-coingecko/coins"
+	"github.com/verzth/go-coingecko/types"
 )
 
 func (c *Client) CoinsList() ([]*coins.CoinInfo, error) {

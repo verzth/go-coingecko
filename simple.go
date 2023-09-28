@@ -1,4 +1,4 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/JulianToledano/goingecko/simple"
+	"github.com/verzth/go-coingecko/simple"
 )
 
 func (c *Client) SimplePrice(ids, vsCurrencies string, includeMarketCap, includeDayVolume, includeDayChange, includeLastTimeUpdated bool) (simple.Price, error) {

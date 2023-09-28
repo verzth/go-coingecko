@@ -3,11 +3,11 @@ package test
 import (
 	"testing"
 
-	"github.com/JulianToledano/goingecko"
+	"github.com/verzth/go-coingecko"
 )
 
 func TestEvents(t *testing.T) {
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, _ := cgClient.Events("DE", "Meetup", "1", "2015-01-01", "2021-12-31", false)
 	if r == nil {
@@ -16,7 +16,7 @@ func TestEvents(t *testing.T) {
 }
 
 func TestEventsCountries(t *testing.T) {
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, _ := cgClient.EventsCountries()
 	if r == nil {
@@ -25,7 +25,7 @@ func TestEventsCountries(t *testing.T) {
 }
 
 func TestEventsTypes(t *testing.T) {
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, _ := cgClient.EventsTypes()
 	if r == nil {

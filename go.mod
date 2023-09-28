@@ -1,5 +1,3 @@
-module github.com/JulianToledano/goingecko
+module github.com/verzth/go-coingecko
 
-go 1.21
-
-toolchain go1.21.0
+go 1.20

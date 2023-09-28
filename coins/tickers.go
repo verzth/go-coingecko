@@ -1,6 +1,6 @@
 package coins
 
-import "github.com/JulianToledano/goingecko/types"
+import "github.com/verzth/go-coingecko/types"
 
 type Tickers struct {
 	Name    string         `json:"name"`

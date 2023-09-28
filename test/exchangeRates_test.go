@@ -3,12 +3,12 @@ package test
 import (
 	"testing"
 
-	"github.com/JulianToledano/goingecko"
+	"github.com/verzth/go-coingecko"
 )
 
 func TestExchangeRates(t *testing.T) {
 
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, err := cgClient.ExchangeRates()
 	if r == nil {

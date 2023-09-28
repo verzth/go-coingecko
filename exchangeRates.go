@@ -1,10 +1,10 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/JulianToledano/goingecko/exchangeRates"
+	"github.com/verzth/go-coingecko/exchangeRates"
 )
 
 func (c *Client) ExchangeRates() (*exchangeRates.Rates, error) {

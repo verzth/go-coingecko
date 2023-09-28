@@ -3,12 +3,12 @@ package test
 import (
 	"testing"
 
-	"github.com/JulianToledano/goingecko"
+	"github.com/verzth/go-coingecko"
 )
 
 func TestGlobal(t *testing.T) {
 
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, err := cgClient.Global()
 	if r == nil {
@@ -21,7 +21,7 @@ func TestGlobal(t *testing.T) {
 
 func TestDefi(t *testing.T) {
 
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	r, err := cgClient.DecentrilizedFinanceDEFI()
 	if r == nil {

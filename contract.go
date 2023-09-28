@@ -1,12 +1,12 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
 	"fmt"
 	"net/url"
 
-	"github.com/JulianToledano/goingecko/contract"
-	"github.com/JulianToledano/goingecko/types"
+	"github.com/verzth/go-coingecko/contract"
+	"github.com/verzth/go-coingecko/types"
 )
 
 func (c *Client) ContractInfo(id, contractAddress string) (*contract.ContractAddressInfo, error) {

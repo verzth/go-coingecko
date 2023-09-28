@@ -1,10 +1,10 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/JulianToledano/goingecko/global"
+	"github.com/verzth/go-coingecko/global"
 )
 
 func (c *Client) Global() (*global.Global, error) {

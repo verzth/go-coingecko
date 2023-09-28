@@ -1,9 +1,9 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
 
-	"github.com/JulianToledano/goingecko/trending"
+	"github.com/verzth/go-coingecko/trending"
 )
 
 func (c *Client) Trending() (*trending.Trending, error) {

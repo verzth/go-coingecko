@@ -1,4 +1,4 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/JulianToledano/goingecko/ping"
+	"github.com/verzth/go-coingecko/ping"
 )
 
 type Client struct {

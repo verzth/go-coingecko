@@ -1,4 +1,4 @@
-package goingecko
+package gecko
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/JulianToledano/goingecko/events"
+	"github.com/verzth/go-coingecko/events"
 )
 
 func (c *Client) Events(countryCode, eventType, page, from, to string, onlyUpcoming bool) (*events.Events, error) {

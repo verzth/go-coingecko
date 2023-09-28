@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JulianToledano/goingecko"
+	"github.com/verzth/go-coingecko"
 )
 
 func TestCoins(t *testing.T) {
 	coin := "bitcoin"
 
-	cgClient := goingecko.NewClient(nil)
+	cgClient := gecko.NewClient(nil)
 
 	coinData, _ := cgClient.CoinsId(coin, true, true, true, true, true, true)
 	fmt.Println(coinData.MarketData.CurrentPrice.Usd)
