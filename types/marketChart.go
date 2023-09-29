@@ -1,7 +1,9 @@
 package types
 
+import "github.com/shopspring/decimal"
+
 type MarketChart struct {
-	Prices       [][]float64 `json:"prices"`
-	MarketCaps   [][]float64 `json:"market_caps"`
-	TotalVolumes [][]float64 `json:"total_volumes"`
+	Prices       [][]decimal.Decimal `json:"prices"`
+	MarketCaps   [][]decimal.Decimal `json:"market_caps"`
+	TotalVolumes [][]decimal.Decimal `json:"total_volumes"`
 }

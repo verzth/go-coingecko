@@ -1,5 +1,7 @@
 package types
 
+import "github.com/shopspring/decimal"
+
 type Description struct {
 	En   string `json:"en"`
 	De   string `json:"de"`
@@ -25,17 +27,17 @@ type Description struct {
 }
 
 type Links struct {
-	Homepage                    []string `json:"homepage"`
-	BlockchainSite              []string `json:"blockchain_site"`
-	OfficialForumURL            []string `json:"official_forum_url"`
-	ChatURL                     []string `json:"chat_url"`
-	AnnouncementURL             []string `json:"announcement_url"`
-	TwitterScreenName           string   `json:"twitter_screen_name"`
-	FacebookUsername            string   `json:"facebook_username"`
-	BitcointalkThreadIdentifier float64  `json:"bitcointalk_thread_identifier"`
-	TelegramChannelIdentifier   string   `json:"telegram_channel_identifier"`
-	SubredditURL                string   `json:"subreddit_url"`
-	ReposURL                    ReposUrl `json:"repos_url"`
+	Homepage                    []string        `json:"homepage"`
+	BlockchainSite              []string        `json:"blockchain_site"`
+	OfficialForumURL            []string        `json:"official_forum_url"`
+	ChatURL                     []string        `json:"chat_url"`
+	AnnouncementURL             []string        `json:"announcement_url"`
+	TwitterScreenName           string          `json:"twitter_screen_name"`
+	FacebookUsername            string          `json:"facebook_username"`
+	BitcointalkThreadIdentifier decimal.Decimal `json:"bitcointalk_thread_identifier"`
+	TelegramChannelIdentifier   string          `json:"telegram_channel_identifier"`
+	SubredditURL                string          `json:"subreddit_url"`
+	ReposURL                    ReposUrl        `json:"repos_url"`
 }
 
 type ReposUrl struct {
@@ -44,31 +46,31 @@ type ReposUrl struct {
 }
 
 type Roi struct {
-	Time       float64 `json:"times"`
-	Currency   string  `json:"currency"`
-	Percentage float64 `json:"percentage"`
+	Time       decimal.Decimal `json:"times"`
+	Currency   string          `json:"currency"`
+	Percentage decimal.Decimal `json:"percentage"`
 }
 
 type Sparkline struct {
-	Price []float64 `json:"price"`
+	Price []decimal.Decimal `json:"price"`
 }
 
 type Ticker struct {
-	Base                   string       `json:"base"`
-	Target                 string       `json:"target"`
-	Market                 MarketTicker `json:"market"`
-	Last                   float64      `json:"last"`
-	Volume                 float64      `json:"volume"`
-	ConvertedLast          Converted    `json:"converted_last"`
-	ConvertedVolume        Converted    `json:"converted_volume"`
-	TrustScore             string       `json:"trust_score"`
-	BidAskSpreadPercentage float64      `json:"bid_ask_spread_percentage"`
-	Timestamp              string       `json:"timestamp"`
-	LastTradedAt           string       `json:"last_traded_at"`
-	LastFetchAt            string       `json:"last_fetch_at"`
-	IsAnomaly              bool         `json:"is_anomaly"`
-	IsStale                bool         `json:"is_stale"`
-	TradeURL               string       `json:"trade_url"`
+	Base                   string          `json:"base"`
+	Target                 string          `json:"target"`
+	Market                 MarketTicker    `json:"market"`
+	Last                   decimal.Decimal `json:"last"`
+	Volume                 decimal.Decimal `json:"volume"`
+	ConvertedLast          Converted       `json:"converted_last"`
+	ConvertedVolume        Converted       `json:"converted_volume"`
+	TrustScore             string          `json:"trust_score"`
+	BidAskSpreadPercentage decimal.Decimal `json:"bid_ask_spread_percentage"`
+	Timestamp              string          `json:"timestamp"`
+	LastTradedAt           string          `json:"last_traded_at"`
+	LastFetchAt            string          `json:"last_fetch_at"`
+	IsAnomaly              bool            `json:"is_anomaly"`
+	IsStale                bool            `json:"is_stale"`
+	TradeURL               string          `json:"trade_url"`
 	// token_info_url `json:"token_info_url"`	null
 	CoinID string `json:"coin_id"`
 }
@@ -80,9 +82,9 @@ type MarketTicker struct {
 }
 
 type Converted struct {
-	Btc float64 `json:"btc"`
-	Eth float64 `json:"eth"`
-	Usd float64 `json:"usd"`
+	Btc decimal.Decimal `json:"btc"`
+	Eth decimal.Decimal `json:"eth"`
+	Usd decimal.Decimal `json:"usd"`
 }
 
 type Image struct {
@@ -116,13 +118,13 @@ type Localization struct {
 }
 
 type CommunityData struct {
-	FacebookLikes                float64 `json:"facebook_likes"`
-	TwitterFollowers             float64 `json:"twitter_followers"`
-	RedditAveragePosts           float64 `json:"reddit_average_posts_48h"`
-	RedditAverageCommentsTwoDays float64 `json:"reddit_average_comments_48h"`
-	RedditSubscribers            float64 `json:"reddit_subscribers"`
-	RedditAccountsActiveTwoDays  float64 `json:"reddit_accounts_active_48h"`
-	TelegramChannelUserCount     float64 `json:"telegram_channel_user_count"`
+	FacebookLikes                decimal.Decimal `json:"facebook_likes"`
+	TwitterFollowers             decimal.Decimal `json:"twitter_followers"`
+	RedditAveragePosts           decimal.Decimal `json:"reddit_average_posts_48h"`
+	RedditAverageCommentsTwoDays decimal.Decimal `json:"reddit_average_comments_48h"`
+	RedditSubscribers            decimal.Decimal `json:"reddit_subscribers"`
+	RedditAccountsActiveTwoDays  decimal.Decimal `json:"reddit_accounts_active_48h"`
+	TelegramChannelUserCount     decimal.Decimal `json:"telegram_channel_user_count"`
 }
 
 type DeveloperData struct {
@@ -144,114 +146,114 @@ type CodeStats struct {
 }
 
 type PublicInterestStats struct {
-	AlexaRank float64 `json:"alexa_rank"`
+	AlexaRank decimal.Decimal `json:"alexa_rank"`
 	// bing_matches `json:"bing_matches"`
 }
 
 type MarketData struct {
-	CurrentPrice                          PriceRates `json:"current_price"`
-	Roi                                   Roi        `json:"roi"`
-	Ath                                   PriceRates `json:"ath"`
-	AthChangePercentage                   PriceRates `json:"ath_change_percentage"`
-	AthDate                               DateRates  `json:"ath_date"`
-	Atl                                   PriceRates `json:"atl"`
-	AtlChangePercentage                   PriceRates `json:"atl_change_percentage"`
-	AtlDate                               DateRates  `json:"atl_date"`
-	MarketCap                             PriceRates `json:"market_cap"`
-	MarketCapRank                         int16      `json:"market_cap_rank"`
-	FullyDilutedValuation                 PriceRates `json:"fully_diluted_valuation"`
-	TotalVolume                           PriceRates `json:"total_volume"`
-	High24                                PriceRates `json:"high_24h"`
-	Low24                                 PriceRates `json:"low_24h"`
-	PriceChangeDay                        float64    `json:"price_change_24h"`
-	PriceChangePercentDay                 float64    `json:"price_change_percentage_24h"`
-	PriceChangePercentWeek                float64    `json:"price_change_percentage_7d"`
-	PriceChangePercentTwoWeeks            float64    `json:"price_change_percentage_14d"`
-	PriceChangePercentMonth               float64    `json:"price_change_percentage_30d"`
-	PriceChangePercentTwoMonths           float64    `json:"price_change_percentage_60d"`
-	PriceChangePercentHalfYear            float64    `json:"price_change_percentage_200d"`
-	PriceChangePercentYear                float64    `json:"price_change_percentage_1y"`
-	MarketCapChangeDay                    float64    `json:"market_cap_change_24h"`
-	MarketCapChangePercentDay             float64    `json:"market_cap_change_percentage_24h"`
-	MarketCapChangeDayRates               PriceRates `json:"price_change_24h_in_currency"`
-	PriceChangePercentageHourCurrency     PriceRates `json:"price_change_percentage_1h_in_currency"`
-	PriceChangePercentageDayCurrency      PriceRates `json:"price_change_percentage_24h_in_currency"`
-	PriceChangePercentageWeekCurrency     PriceRates `json:"price_change_percentage_7d_in_currency"`
-	PriceChangePercentageTwoWeekCurrency  PriceRates `json:"price_change_percentage_14d_in_currency"`
-	PriceChangePercentageMonthCurrency    PriceRates `json:"price_change_percentage_30d_in_currency"`
-	PriceChangePercentageTwoMonthCurrency PriceRates `json:"price_change_percentage_60d_in_currency"`
-	PriceChangePercentageHalfYearCurrency PriceRates `json:"price_change_percentage_200d_in_currency"`
-	PriceChangePercentageYearCurrency     PriceRates `json:"price_change_percentage_1y_in_currency"`
-	MarketCapChangeDayCurrency            PriceRates `json:"market_cap_change_24h_in_currency"`
-	MarketCapChangePercentageDayCurrency  PriceRates `json:"market_cap_change_percentage_24h_in_currency"`
-	TotalSupply                           float64    `json:"total_supply"`
-	MaxSupply                             float64    `json:"max_supply"`
-	CirculatingSupply                     float64    `json:"circulating_supply"`
-	Sparkline                             Sparkline  `json:"sparkline_7d"`
-	LastUpdated                           string     `json:"last_updated"`
+	CurrentPrice                          PriceRates      `json:"current_price"`
+	Roi                                   Roi             `json:"roi"`
+	Ath                                   PriceRates      `json:"ath"`
+	AthChangePercentage                   PriceRates      `json:"ath_change_percentage"`
+	AthDate                               DateRates       `json:"ath_date"`
+	Atl                                   PriceRates      `json:"atl"`
+	AtlChangePercentage                   PriceRates      `json:"atl_change_percentage"`
+	AtlDate                               DateRates       `json:"atl_date"`
+	MarketCap                             PriceRates      `json:"market_cap"`
+	MarketCapRank                         int16           `json:"market_cap_rank"`
+	FullyDilutedValuation                 PriceRates      `json:"fully_diluted_valuation"`
+	TotalVolume                           PriceRates      `json:"total_volume"`
+	High24                                PriceRates      `json:"high_24h"`
+	Low24                                 PriceRates      `json:"low_24h"`
+	PriceChangeDay                        decimal.Decimal `json:"price_change_24h"`
+	PriceChangePercentDay                 decimal.Decimal `json:"price_change_percentage_24h"`
+	PriceChangePercentWeek                decimal.Decimal `json:"price_change_percentage_7d"`
+	PriceChangePercentTwoWeeks            decimal.Decimal `json:"price_change_percentage_14d"`
+	PriceChangePercentMonth               decimal.Decimal `json:"price_change_percentage_30d"`
+	PriceChangePercentTwoMonths           decimal.Decimal `json:"price_change_percentage_60d"`
+	PriceChangePercentHalfYear            decimal.Decimal `json:"price_change_percentage_200d"`
+	PriceChangePercentYear                decimal.Decimal `json:"price_change_percentage_1y"`
+	MarketCapChangeDay                    decimal.Decimal `json:"market_cap_change_24h"`
+	MarketCapChangePercentDay             decimal.Decimal `json:"market_cap_change_percentage_24h"`
+	MarketCapChangeDayRates               PriceRates      `json:"price_change_24h_in_currency"`
+	PriceChangePercentageHourCurrency     PriceRates      `json:"price_change_percentage_1h_in_currency"`
+	PriceChangePercentageDayCurrency      PriceRates      `json:"price_change_percentage_24h_in_currency"`
+	PriceChangePercentageWeekCurrency     PriceRates      `json:"price_change_percentage_7d_in_currency"`
+	PriceChangePercentageTwoWeekCurrency  PriceRates      `json:"price_change_percentage_14d_in_currency"`
+	PriceChangePercentageMonthCurrency    PriceRates      `json:"price_change_percentage_30d_in_currency"`
+	PriceChangePercentageTwoMonthCurrency PriceRates      `json:"price_change_percentage_60d_in_currency"`
+	PriceChangePercentageHalfYearCurrency PriceRates      `json:"price_change_percentage_200d_in_currency"`
+	PriceChangePercentageYearCurrency     PriceRates      `json:"price_change_percentage_1y_in_currency"`
+	MarketCapChangeDayCurrency            PriceRates      `json:"market_cap_change_24h_in_currency"`
+	MarketCapChangePercentageDayCurrency  PriceRates      `json:"market_cap_change_percentage_24h_in_currency"`
+	TotalSupply                           decimal.Decimal `json:"total_supply"`
+	MaxSupply                             decimal.Decimal `json:"max_supply"`
+	CirculatingSupply                     decimal.Decimal `json:"circulating_supply"`
+	Sparkline                             Sparkline       `json:"sparkline_7d"`
+	LastUpdated                           string          `json:"last_updated"`
 }
 type PriceRates struct {
-	Aed  float64 `json:"aed"`
-	Ars  float64 `json:"ars"`
-	Aud  float64 `json:"aud"`
-	Bch  float64 `json:"bch"`
-	Bdt  float64 `json:"bdt"`
-	Bhd  float64 `json:"bhd"`
-	Bmd  float64 `json:"bmd"`
-	Bnb  float64 `json:"bnb"`
-	Brl  float64 `json:"brl"`
-	Btc  float64 `json:"btc"`
-	Cad  float64 `json:"cad"`
-	Chf  float64 `json:"chf"`
-	Clp  float64 `json:"clp"`
-	Cny  float64 `json:"cny"`
-	Czk  float64 `json:"czk"`
-	Dkk  float64 `json:"dkk"`
-	Dot  float64 `json:"dot"`
-	Eos  float64 `json:"eos"`
-	Eth  float64 `json:"eth"`
-	Eur  float64 `json:"eur"`
-	Gbp  float64 `json:"gbp"`
-	Hkd  float64 `json:"hkd"`
-	Huf  float64 `json:"huf"`
-	Idr  float64 `json:"idr"`
-	Ils  float64 `json:"ils"`
-	Inr  float64 `json:"inr"`
-	Jpy  float64 `json:"jpy"`
-	Krw  float64 `json:"krw"`
-	Kwd  float64 `json:"kwd"`
-	Lkr  float64 `json:"lkr"`
-	Ltc  float64 `json:"ltc"`
-	Mmk  float64 `json:"mmk"`
-	Mxn  float64 `json:"mxn"`
-	Myr  float64 `json:"myr"`
-	Ngn  float64 `json:"ngn"`
-	Nok  float64 `json:"nok"`
-	Nzd  float64 `json:"nzd"`
-	Php  float64 `json:"php"`
-	Pkr  float64 `json:"pkr"`
-	Pln  float64 `json:"pln"`
-	Rub  float64 `json:"rub"`
-	Sar  float64 `json:"sar"`
-	Sek  float64 `json:"sek"`
-	Sgd  float64 `json:"sgd"`
-	Thb  float64 `json:"thb"`
-	Try  float64 `json:"try"`
-	Twd  float64 `json:"twd"`
-	Uah  float64 `json:"uah"`
-	Usd  float64 `json:"usd"`
-	Vef  float64 `json:"vef"`
-	Vnd  float64 `json:"vnd"`
-	Xag  float64 `json:"xag"`
-	Xau  float64 `json:"xau"`
-	Xdr  float64 `json:"xdr"`
-	Xlm  float64 `json:"xlm"`
-	Xrp  float64 `json:"xrp"`
-	Yfi  float64 `json:"yfi"`
-	Zar  float64 `json:"zar"`
-	Bits float64 `json:"bits"`
-	Link float64 `json:"link"`
-	Sats float64 `json:"sats"`
+	Aed  decimal.Decimal `json:"aed"`
+	Ars  decimal.Decimal `json:"ars"`
+	Aud  decimal.Decimal `json:"aud"`
+	Bch  decimal.Decimal `json:"bch"`
+	Bdt  decimal.Decimal `json:"bdt"`
+	Bhd  decimal.Decimal `json:"bhd"`
+	Bmd  decimal.Decimal `json:"bmd"`
+	Bnb  decimal.Decimal `json:"bnb"`
+	Brl  decimal.Decimal `json:"brl"`
+	Btc  decimal.Decimal `json:"btc"`
+	Cad  decimal.Decimal `json:"cad"`
+	Chf  decimal.Decimal `json:"chf"`
+	Clp  decimal.Decimal `json:"clp"`
+	Cny  decimal.Decimal `json:"cny"`
+	Czk  decimal.Decimal `json:"czk"`
+	Dkk  decimal.Decimal `json:"dkk"`
+	Dot  decimal.Decimal `json:"dot"`
+	Eos  decimal.Decimal `json:"eos"`
+	Eth  decimal.Decimal `json:"eth"`
+	Eur  decimal.Decimal `json:"eur"`
+	Gbp  decimal.Decimal `json:"gbp"`
+	Hkd  decimal.Decimal `json:"hkd"`
+	Huf  decimal.Decimal `json:"huf"`
+	Idr  decimal.Decimal `json:"idr"`
+	Ils  decimal.Decimal `json:"ils"`
+	Inr  decimal.Decimal `json:"inr"`
+	Jpy  decimal.Decimal `json:"jpy"`
+	Krw  decimal.Decimal `json:"krw"`
+	Kwd  decimal.Decimal `json:"kwd"`
+	Lkr  decimal.Decimal `json:"lkr"`
+	Ltc  decimal.Decimal `json:"ltc"`
+	Mmk  decimal.Decimal `json:"mmk"`
+	Mxn  decimal.Decimal `json:"mxn"`
+	Myr  decimal.Decimal `json:"myr"`
+	Ngn  decimal.Decimal `json:"ngn"`
+	Nok  decimal.Decimal `json:"nok"`
+	Nzd  decimal.Decimal `json:"nzd"`
+	Php  decimal.Decimal `json:"php"`
+	Pkr  decimal.Decimal `json:"pkr"`
+	Pln  decimal.Decimal `json:"pln"`
+	Rub  decimal.Decimal `json:"rub"`
+	Sar  decimal.Decimal `json:"sar"`
+	Sek  decimal.Decimal `json:"sek"`
+	Sgd  decimal.Decimal `json:"sgd"`
+	Thb  decimal.Decimal `json:"thb"`
+	Try  decimal.Decimal `json:"try"`
+	Twd  decimal.Decimal `json:"twd"`
+	Uah  decimal.Decimal `json:"uah"`
+	Usd  decimal.Decimal `json:"usd"`
+	Vef  decimal.Decimal `json:"vef"`
+	Vnd  decimal.Decimal `json:"vnd"`
+	Xag  decimal.Decimal `json:"xag"`
+	Xau  decimal.Decimal `json:"xau"`
+	Xdr  decimal.Decimal `json:"xdr"`
+	Xlm  decimal.Decimal `json:"xlm"`
+	Xrp  decimal.Decimal `json:"xrp"`
+	Yfi  decimal.Decimal `json:"yfi"`
+	Zar  decimal.Decimal `json:"zar"`
+	Bits decimal.Decimal `json:"bits"`
+	Link decimal.Decimal `json:"link"`
+	Sats decimal.Decimal `json:"sats"`
 }
 
 type DateRates struct {
